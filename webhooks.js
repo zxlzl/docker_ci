@@ -3,8 +3,8 @@ var createHandler = require('github-webhook-handler')
 var handler = createHandler({ path: '/webhooks', secret: 'myHashSecret' })
 // 上面的 secret 保持和 GitHub 后台设置的一致
 
+const {spawn} = require('child_process');
 function run_cmd(cmd, args, callback) {
-    var spawn = require('child_process').spawn;
     var child = spawn(cmd, args);
     var resp = "";
 
@@ -30,21 +30,22 @@ handler.on('error', function (err) {
 
 
 handler.on('*', function (event) {
-    console.log('Received *', event.payload.action);
-    //   run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
+    // console.log('Received *', event.payload.action);
+    console.log('Received *',);
+    run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 })
- 
-handler.on('push', function (event) {
-    console.log('Received a push event for %s to %s',
-        event.payload.repository.name,
-        event.payload.ref);
-        // 分支判断
-        if(event.payload.ref === 'refs/heads/master'){
-            console.log('deploy master..')
-            run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 
-        }
-})
+// handler.on('push', function (event) {
+//     console.log('Received a push event for %s to %s',
+//         event.payload.repository.name,
+//         event.payload.ref);
+//         // 分支判断
+//         if(event.payload.ref === 'refs/heads/master'){
+//             console.log('deploy master..')
+//             run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
+
+//         }
+// })
 
 
 // handler.on('issues', function (event) {
