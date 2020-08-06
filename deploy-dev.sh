@@ -1,3 +1,8 @@
+# 测试命令 看一下有哪些文件
+# ls
+
+
+# deploy-dev.sh
 echo Deploy Project
 # docker-compose up -d --force-recreate --build
 
