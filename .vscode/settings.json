@@ -17,7 +17,7 @@
             "type": "sftp",
             "name": "AliyunServer",
             "dir": "/root/source/docker_ci",
-            "host": "121.40.156.183",
+            "host": "120.26.88.167",
             "port": 22,
             "user": "root",
             "password": "zxl@1234"

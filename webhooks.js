@@ -32,7 +32,7 @@ handler.on('error', function (err) {
 handler.on('*', function (event) {
     // console.log('Received *', event.payload.action);
     console.log('Received *',);
-    run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
+    // run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 })
 
 // handler.on('push', function (event) {
