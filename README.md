@@ -2,7 +2,7 @@
 测试使用Docker / Github Webhook实现CI持续集成
 
 - docker-compose
-- gitlab webhooks
+- github webhooks
 
 
 ## 示例代码运行
@@ -10,6 +10,7 @@
 - Clone or download this repository
 Enter your local directory, and 
 - start webhooks watcher
+
 ``` bash
 npm install
 npx ## 示例代码运行
